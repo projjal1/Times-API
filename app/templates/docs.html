@@ -1,0 +1,71 @@
+{%extends 'home.html'%}
+
+{%block content%}
+
+<h1>
+    API Documentation
+</h1>
+<br>
+<ul>
+	<li>Geocoding Places</li>
+	<li>Get Sunrise Sunset Times</li>
+</ul>
+<p>Our API's are in JSON format, and are free of cost under Open-Source Project</p>
+<br>
+
+<h2>Geocoding Places</h2>
+<p>Ours is a very simple REST api, you only have to do a GET request to <strong>https://times-api-projjal/api/lat-long?city=CITY_NAME</strong></p>
+<h4>Parameters</h4>
+<ul>
+	<li><strong>city</strong>:Name of the city</li>
+</ul>
+<h4>Sample Requests</h4>
+<p>The sample request for getting latitude and longitude information from our API for a given city:</p>
+<pre>http://times-api-projjal/api/lat-long?city=kolkata</pre>
+<br>
+<h4>Response</h4>
+<p>The result data is formatted using JSON. An example:</p>
+<p class="note">NOTE: Co-ordinates have been referenced from open.maprequest.api.com </p>
+<pre>
+{
+  "co-ord": {
+    "lat": 22.567746, 
+    "lng": 88.347602
+  }, 
+  "country-code": "IN", 
+  "county": "West Bengal", 
+  "map-url": "http://open.mapquestapi.com/staticmap/v5/map?key=peVM41X5wGi9vpUZfV1iOzzGcJGj1uFk&type=map&size=225,160&locations=22.5677459,88.3476023|marker-sm-50318A-1&scalebar=true&zoom=12&rand=-1422958136"
+}
+</pre>
+
+<hr>
+
+<h2>Get Sunrise Sunset Times</h2>
+<p>Ours is a very simple REST api, you only have to do a GET request to <strong>https://times-api-projjal/api/sunrise-sunset?city=CITY_NAME</strong></p>
+<h4>Parameters</h4>
+<ul>
+	<li><strong>city</strong>:Name of the city</li>
+</ul>
+<h4>Sample Requests</h4>
+<p>The sample request for getting sunset and sunrise information from our API for a given city:</p>
+<pre>http://times-api-projjal/api/sunrise-sunset?city=kolkata</pre>
+<br>
+<h4>Response</h4>
+<p>The result data is formatted using JSON. An example:</p>
+<p class="note">NOTE: All times are in UTC and summer time adjustments are not included in the returned data.</p>
+<pre>
+{
+  "astronomical_twilight_begin": "10:01:36 PM", 
+  "astronomical_twilight_end": "2:21:06 PM", 
+  "civil_twilight_begin": "11:02:23 PM", 
+  "civil_twilight_end": "1:20:19 PM", 
+  "day_length": "13:28:06", 
+  "nautical_twilight_begin": "10:32:35 PM", 
+  "nautical_twilight_end": "1:50:07 PM", 
+  "solar_noon": "6:11:21 AM", 
+  "sunrise": "11:27:18 PM", 
+  "sunset": "12:55:24 PM"
+}
+</pre>
+
+{%endblock%}
