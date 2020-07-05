@@ -9,3 +9,10 @@ Requirements (Dependencies):
 <li>Flask</li>
 <li>Jinja</li>
 <li>Guniorn</li>
+</ul>
+
+Run the server at 
+<pre>localhost:5000</pre>
+
+You can apply your own configuraions at ease.
+
